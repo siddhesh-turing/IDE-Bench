@@ -1,5 +1,7 @@
 # IDE-Bench
 
+https://www.ide-bench.com/
+
 IDE-Bench is a comprehensive framework for evaluating AI IDE agents on real-world software engineering tasks through an IDE-native tool interface. We present a Dockerized test harness that goes beyond raw terminal execution, granting models a structured tool ecosystem that represents AI-native IDEs like Cursor and Windsurf. By providing high-level abstractions for codebase search, structured file editing, and tools for testing full-stack applications, IDE-Bench evaluates an agent’s ability to act as a true engineering collaborator. For its evaluation to prevent training data contamination, we created 80 tasks across eight never-published repositories spanning C/C++, Java, and MERN stacks, representing production scenarios including feature implementation, bug fixing, refactoring, and performance optimization that mirror daily developer workflows in private codebases. Our benchmark is the first to systematically correlate agentreported intent with successful project-level modifications in a multi-language, full-stack environment on completely uncontaminated code.
 
 ## Quick Start
