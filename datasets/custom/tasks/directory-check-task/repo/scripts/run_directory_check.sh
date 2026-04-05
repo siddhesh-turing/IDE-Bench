@@ -42,6 +42,15 @@ for exercise_path in "$ROOT_DIR"/*/; do
   EXERCISE=$(basename "$exercise_path")
   STATUS="✅ $EXERCISE: PASS"
 
+  # Set documentation filenames based on language
+  if [[ "$LANGUAGE" == "swift" ]]; then
+    DOCS_INSTRUCTIONS="Instructions.md"
+    DOCS_INTRODUCTION="Introduction.md"
+  else
+    DOCS_INSTRUCTIONS="instructions.md"
+    DOCS_INTRODUCTION="introduction.md"
+  fi
+
   # Dynamic example path detection
   if [[ "$LANGUAGE" == "swift" ]]; then
     EXAMPLE_FILE="${exercise_path}/.meta/Sources/${EXERCISE}/example.${EXT}"
