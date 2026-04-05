@@ -1,7 +1,8 @@
-diff --git a/tasks/directory-check-task/repo/scripts/run_directory_check.sh b/tasks/directory-check-task/repo/scripts/run_directory_check.sh
---- a/tasks/directory-check-task/repo/scripts/run_directory_check.sh
-+++ b/tasks/directory-check-task/repo/scripts/run_directory_check.sh
-@@ -43,8 +43,13 @@ for exercise_path in "$ROOT_DIR"/*/; do
+diff --git a/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh b/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
+index 72f19dc..b74a20c 100755
+--- a/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
++++ b/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
+@@ -43,14 +43,26 @@ for exercise_path in "$ROOT_DIR"/*/; do
    STATUS="✅ $EXERCISE: PASS"
  
    # Set documentation filenames based on language
@@ -16,4 +17,21 @@ diff --git a/tasks/directory-check-task/repo/scripts/run_directory_check.sh b/ta
 +  fi
  
    # Dynamic example path detection
-   if [[ "$LANGUAGE" == "swift" ]]; then
+-  EXAMPLE_FILE="${exercise_path}/.meta/example.${EXT}"
+-  STUB_FILE="${exercise_path}/${EXERCISE}.${EXT}"
+-  TEST_FILE="${exercise_path}/${EXERCISE}_test.${EXT}"
+-  TEST_FILE_UNDER_LOGS="${exercise_path}/${TEST_LOGS_DIR}/$(basename "$TEST_FILE")"
++  if [[ "$LANGUAGE" == "swift" ]]; then
++    EXAMPLE_FILE="${exercise_path}/.meta/Sources/${EXERCISE}/example.${EXT}"
++    STUB_FILE="${exercise_path}/Sources/${EXERCISE}/${EXERCISE}.${EXT}"
++    TEST_FILE="${exercise_path}/Tests/Test${EXERCISE}/Test${EXERCISE}.${EXT}"
++    TEST_FILE_UNDER_LOGS="${exercise_path}/${TEST_LOGS_DIR}/Test${EXERCISE}.${EXT}"
++  else
++    EXAMPLE_FILE="${exercise_path}/.meta/example.${EXT}"
++    STUB_FILE="${exercise_path}/${EXERCISE}.${EXT}"
++    TEST_FILE="${exercise_path}/${EXERCISE}_test.${EXT}"
++    TEST_FILE_UNDER_LOGS="${exercise_path}/${TEST_LOGS_DIR}/$(basename "$TEST_FILE")"
++  fi
+ 
+   # Construct the FILES array
+   FILES=(
