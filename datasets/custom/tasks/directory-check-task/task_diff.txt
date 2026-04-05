@@ -1,15 +1,20 @@
-diff --git a/tasks/directory-check-task/scripts/run_directory_check.sh b/tasks/directory-check-task/scripts/run_directory_check.sh
-index 6948baa..35e6bce 100755
---- a/tasks/directory-check-task/scripts/run_directory_check.sh
-+++ b/tasks/directory-check-task/scripts/run_directory_check.sh
-@@ -44,8 +44,8 @@ for exercise_path in "$ROOT_DIR"/*/; do
+diff --git a/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh b/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
+index 8de3ec3..6948baa 100755
+--- a/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
++++ b/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
+@@ -42,6 +42,15 @@ for exercise_path in "$ROOT_DIR"/*/; do
+   EXERCISE=$(basename "$exercise_path")
+   STATUS="✅ $EXERCISE: PASS"
  
-   # Set documentation filenames based on language
-   if [[ "$LANGUAGE" == "swift" ]]; then
--    DOCS_INSTRUCTIONS="Instructions.md"
--    DOCS_INTRODUCTION="Introduction.md"
++  # Set documentation filenames based on language
++  if [[ "$LANGUAGE" == "swift" ]]; then
++    DOCS_INSTRUCTIONS="Instructions.md"
++    DOCS_INTRODUCTION="Introduction.md"
++  else
 +    DOCS_INSTRUCTIONS="instructions.md"
 +    DOCS_INTRODUCTION="introduction.md"
-   else
-     DOCS_INSTRUCTIONS="instructions.md"
-     DOCS_INTRODUCTION="introduction.md"
++  fi
++
+   # Dynamic example path detection
+   if [[ "$LANGUAGE" == "swift" ]]; then
+     EXAMPLE_FILE="${exercise_path}/.meta/Sources/${EXERCISE}/example.${EXT}"
