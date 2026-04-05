@@ -47,17 +47,10 @@ for exercise_path in "$ROOT_DIR"/*/; do
   DOCS_INTRODUCTION="introduction.md"
 
   # Dynamic example path detection
-  if [[ "$LANGUAGE" == "swift" ]]; then
-    EXAMPLE_FILE="${exercise_path}/.meta/Sources/${EXERCISE}/example.${EXT}"
-    STUB_FILE="${exercise_path}/Sources/${EXERCISE}/${EXERCISE}.${EXT}"
-    TEST_FILE="${exercise_path}/Tests/Test${EXERCISE}/Test${EXERCISE}.${EXT}"
-    TEST_FILE_UNDER_LOGS="${exercise_path}/${TEST_LOGS_DIR}/Test${EXERCISE}.${EXT}"
-  else
-    EXAMPLE_FILE="${exercise_path}/.meta/example.${EXT}"
-    STUB_FILE="${exercise_path}/${EXERCISE}.${EXT}"
-    TEST_FILE="${exercise_path}/${EXERCISE}_test.${EXT}"
-    TEST_FILE_UNDER_LOGS="${exercise_path}/${TEST_LOGS_DIR}/$(basename "$TEST_FILE")"
-  fi
+  EXAMPLE_FILE="${exercise_path}/.meta/example.${EXT}"
+  STUB_FILE="${exercise_path}/${EXERCISE}.${EXT}"
+  TEST_FILE="${exercise_path}/${EXERCISE}_test.${EXT}"
+  TEST_FILE_UNDER_LOGS="${exercise_path}/${TEST_LOGS_DIR}/$(basename "$TEST_FILE")"
 
   # Construct the FILES array
   FILES=(
