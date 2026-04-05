@@ -42,6 +42,10 @@ for exercise_path in "$ROOT_DIR"/*/; do
   EXERCISE=$(basename "$exercise_path")
   STATUS="✅ $EXERCISE: PASS"
 
+  # Set documentation filenames based on language
+  DOCS_INSTRUCTIONS="instructions.md"
+  DOCS_INTRODUCTION="introduction.md"
+
   # Dynamic example path detection
   if [[ "$LANGUAGE" == "swift" ]]; then
     EXAMPLE_FILE="${exercise_path}/.meta/Sources/${EXERCISE}/example.${EXT}"
@@ -104,3 +108,9 @@ echo -e "${BLACK}🧪 Total Exercises Checked: ${BOLD}${TOTAL}${RESET}"
 echo -e "${GREEN}✅ Passed: ${BOLD}${PASSED}${RESET}"
 echo -e "${RED}❌ Failed: ${BOLD}${FAILED}${RESET}"
 echo -e "${BLACK}${BOLD}===========================================================================${RESET}\n"
+
+if [[ "$FAILED" -gt 0 ]]; then
+  exit 1
+fi
+
+exit 0
