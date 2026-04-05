@@ -1,7 +1,6 @@
-diff --git a/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh b/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
-index 72f19dc..b74a20c 100755
---- a/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
-+++ b/datasets/custom/tasks/directory-check-task/repo/scripts/run_directory_check.sh
+diff --git a/tasks/directory-check-task/repo/scripts/run_directory_check.sh b/tasks/directory-check-task/repo/scripts/run_directory_check.sh
+--- a/tasks/directory-check-task/repo/scripts/run_directory_check.sh
++++ b/tasks/directory-check-task/repo/scripts/run_directory_check.sh
 @@ -43,14 +43,26 @@ for exercise_path in "$ROOT_DIR"/*/; do
    STATUS="✅ $EXERCISE: PASS"
  
