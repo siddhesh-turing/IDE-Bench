@@ -1,86 +1,126 @@
-import os
+from pathlib import Path
 import shutil
 import subprocess
 import tempfile
 
-SCRIPT_PATH = "scripts/run_directory_check.sh"
+TASK_DIR = Path(__file__).resolve().parent
+REPO_DIR = TASK_DIR / "repo"
+SCRIPT_PATH = REPO_DIR / "scripts" / "run_directory_check.sh"
+FIXTURE_ROOT = REPO_DIR / "tmp.benchmarks" / "polyglot-benchmark"
 
-def run_script(base_dir):
+
+def make_temp_fixture():
+    temp_dir = tempfile.TemporaryDirectory()
+    temp_root = Path(temp_dir.name)
+
+    target_root = temp_root / "tmp.benchmarks" / "polyglot-benchmark"
+    shutil.copytree(FIXTURE_ROOT, target_root)
+
+    return temp_dir, temp_root
+
+
+def run_script(base_dir: Path, language: str):
     return subprocess.run(
-        ["bash", SCRIPT_PATH, "python"],
+        ["bash", str(SCRIPT_PATH), language],
         cwd=base_dir,
         capture_output=True,
-        text=True
+        text=True,
     )
 
 
-def create_valid_structure(base_dir):
-    path = os.path.join(
-        base_dir,
-        "tmp.benchmarks/polyglot-benchmark/python/exercises/practice/sample1"
-    )
-
-    os.makedirs(os.path.join(path, ".docs"), exist_ok=True)
-    os.makedirs(os.path.join(path, ".meta"), exist_ok=True)
-    os.makedirs(os.path.join(path, "test-file-logs"), exist_ok=True)
-
-    open(os.path.join(path, ".docs/instructions.md"), "w").write("ok")
-    open(os.path.join(path, ".docs/introduction.md"), "w").write("ok")
-    open(os.path.join(path, ".meta/config.json"), "w").write("{}")
-
-    open(os.path.join(path, "sample1.py"), "w").write("print(1)")
-    open(os.path.join(path, "sample1_test.py"), "w").write("assert True")
-
-    open(os.path.join(path, "test-file-logs/negative_test1.py"), "w").write("bad")
-    open(os.path.join(path, "test-file-logs/negative_test1_output.txt"), "w").write("error")
+def test_valid_structure_passes_cpp():
+    temp_dir, temp_root = make_temp_fixture()
+    try:
+        result = run_script(temp_root, "cpp")
+        assert result.returncode == 0, (
+            f"\nSTDOUT:\n{result.stdout}\nSTDERR:\n{result.stderr}"
+        )
+    finally:
+        temp_dir.cleanup()
 
 
-def test_valid_structure_passes():
-    with tempfile.TemporaryDirectory() as tmp:
-        create_valid_structure(tmp)
+def test_missing_required_file_fails_cpp():
+    temp_dir, temp_root = make_temp_fixture()
+    try:
+        bad_file = (
+            temp_root
+            / "tmp.benchmarks"
+            / "polyglot-benchmark"
+            / "cpp"
+            / "exercises"
+            / "practice"
+            / "cpp001"
+            / ".meta"
+            / "config.json"
+        )
+        bad_file.unlink()
 
-        result = run_script(tmp)
-
-        assert result.returncode == 0, result.stdout
-
-
-def test_missing_required_file_fails():
-    with tempfile.TemporaryDirectory() as tmp:
-        create_valid_structure(tmp)
-
-        os.remove(os.path.join(
-            tmp,
-            "tmp.benchmarks/polyglot-benchmark/python/exercises/practice/sample1/.meta/config.json"
-        ))
-
-        result = run_script(tmp)
-
-        assert result.returncode != 0
-
-
-def test_empty_file_fails():
-    with tempfile.TemporaryDirectory() as tmp:
-        create_valid_structure(tmp)
-
-        open(os.path.join(
-            tmp,
-            "tmp.benchmarks/polyglot-benchmark/python/exercises/practice/sample1/.docs/instructions.md"
-        ), "w").close()
-
-        result = run_script(tmp)
-
-        assert result.returncode != 0
+        result = run_script(temp_root, "cpp")
+        assert result.returncode != 0, "Expected script to fail when config.json is missing"
+    finally:
+        temp_dir.cleanup()
 
 
-def test_missing_directory_fails():
-    with tempfile.TemporaryDirectory() as tmp:
-        create_valid_structure(tmp)
+def test_empty_file_fails_cpp():
+    temp_dir, temp_root = make_temp_fixture()
+    try:
+        bad_file = (
+            temp_root
+            / "tmp.benchmarks"
+            / "polyglot-benchmark"
+            / "cpp"
+            / "exercises"
+            / "practice"
+            / "cpp001"
+            / ".docs"
+            / "instructions.md"
+        )
+        bad_file.write_text("")
 
-        shutil.rmtree(os.path.join(
-            tmp,
-            "tmp.benchmarks/polyglot-benchmark/python/exercises/practice/sample1/test-file-logs"
-        ))
+        result = run_script(temp_root, "cpp")
+        assert result.returncode != 0, "Expected script to fail when instructions.md is empty"
+    finally:
+        temp_dir.cleanup()
 
-        result = run_script(tmp)
 
-        assert result.returncode != 0
+def test_missing_directory_fails_cpp():
+    temp_dir, temp_root = make_temp_fixture()
+    try:
+        bad_dir = (
+            temp_root
+            / "tmp.benchmarks"
+            / "polyglot-benchmark"
+            / "cpp"
+            / "exercises"
+            / "practice"
+            / "cpp001"
+            / "test-file-logs"
+        )
+        shutil.rmtree(bad_dir)
+
+        result = run_script(temp_root, "cpp")
+        assert result.returncode != 0, "Expected script to fail when test-file-logs is missing"
+    finally:
+        temp_dir.cleanup()
+
+
+def test_valid_structure_passes_go():
+    temp_dir, temp_root = make_temp_fixture()
+    try:
+        result = run_script(temp_root, "go")
+        assert result.returncode == 0, (
+            f"\nSTDOUT:\n{result.stdout}\nSTDERR:\n{result.stderr}"
+        )
+    finally:
+        temp_dir.cleanup()
+
+
+def test_valid_structure_passes_swift():
+    temp_dir, temp_root = make_temp_fixture()
+    try:
+        result = run_script(temp_root, "swift")
+        assert result.returncode == 0, (
+            f"\nSTDOUT:\n{result.stdout}\nSTDERR:\n{result.stderr}"
+        )
+    finally:
+        temp_dir.cleanup()
