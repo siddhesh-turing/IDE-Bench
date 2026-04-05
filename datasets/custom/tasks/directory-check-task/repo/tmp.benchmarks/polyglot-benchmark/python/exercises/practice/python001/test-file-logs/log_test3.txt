@@ -1,0 +1,7 @@
+/usr/local/bin/python3 /Users/shivam.rai/Documents/python/aider_dir_creation/pythonall5samples/python/exercises/practice/python001/test-file-logs/test3.py
+Execution time: 0.13 seconds
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.202s
+
+OK

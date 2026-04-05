@@ -1,0 +1,11 @@
+services:
+  rate-limiter-task:
+    image: python:3.11-slim
+    container_name: rate-limiter-task
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: >
+      sh -c "pip install --no-cache-dir pytest pytest-asyncio &&
+             chmod +x run-tests.sh &&
+             ./run-tests.sh"

@@ -1,0 +1,29 @@
+task_description: |
+
+  Task: python-rate-limiter-task
+
+  The async rate limiter in api/rate_limiter.py is incorrect.
+
+  Instructions:
+
+    It currently has issues under real usage:
+        - burst traffic can exceed the configured limit under concurrency
+        - older requests are not always pruned at the right time
+        - requests may be denied even after the rate limit window should have reset
+
+    Fix the implementation so that:
+        1. No more than N requests per user are allowed within the configured time window.
+        2. Expired requests are pruned correctly before enforcing the limit.
+        3. The implementation behaves correctly under async concurrency.
+        4. Different users are rate-limited independently.
+        5. The implementation does not block the event loop unnecessarily.
+
+        Do not modify the tests.
+
+
+difficulty: medium
+category: Bug Fix
+tags: [python]
+parser_name: pytest
+
+

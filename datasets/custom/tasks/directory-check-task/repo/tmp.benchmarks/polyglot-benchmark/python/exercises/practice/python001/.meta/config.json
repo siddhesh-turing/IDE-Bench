@@ -1,0 +1,18 @@
+{
+  "Codebench": {
+    "L1Taxonomy": "Data Science and Machine Learning",
+    "L2Taxonomy": "Principal Component Analysis"
+  },
+  "files": {
+    "solution": [
+      "solution.py"
+    ],
+    "test": [
+      "python001_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": ""
+}

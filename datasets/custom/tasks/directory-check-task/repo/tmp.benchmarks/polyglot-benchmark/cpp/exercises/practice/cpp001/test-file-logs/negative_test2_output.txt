@@ -1,0 +1,41 @@
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from ParallelIntegratorTest
+[ RUN      ] ParallelIntegratorTest.SimpleFunction
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:21: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 0.0026041666666666852, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 0.3359375,
+expected evaluates to 0.33333333333333331, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.SimpleFunction (2 ms)
+[ RUN      ] ParallelIntegratorTest.LinearFunction
+[       OK ] ParallelIntegratorTest.LinearFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.ConstantFunction
+[       OK ] ParallelIntegratorTest.ConstantFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.CosineFunction
+[       OK ] ParallelIntegratorTest.CosineFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.ExponentialFunction
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:65: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 0.0022367637052567169, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 1.7205185921643018,
+expected evaluates to 1.7182818284590451, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.ExponentialFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.InvalidInterval
+[       OK ] ParallelIntegratorTest.InvalidInterval (0 ms)
+[ RUN      ] ParallelIntegratorTest.LargeInterval
+[       OK ] ParallelIntegratorTest.LargeInterval (1 ms)
+[ RUN      ] ParallelIntegratorTest.ZeroFunction
+[       OK ] ParallelIntegratorTest.ZeroFunction (1 ms)
+[----------] 8 tests from ParallelIntegratorTest (12 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (12 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] ParallelIntegratorTest.SimpleFunction
+[  FAILED  ] ParallelIntegratorTest.ExponentialFunction
+
+ 2 FAILED TESTS

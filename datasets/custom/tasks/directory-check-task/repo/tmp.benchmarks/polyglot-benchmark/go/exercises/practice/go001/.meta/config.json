@@ -1,0 +1,24 @@
+{
+  "Codebench": {
+    "L1Taxonomy": "Algorithmic / CS",
+    "L2Taxonomy": "Pattern Matching"
+  },
+  "files": {
+    "solution": [
+      "go001.go"
+    ],
+    "test": [
+      "go001_test.go"
+    ],
+    "example": [
+      ".meta/example.go"
+    ],
+    "editor": [
+      "cases_test.go"
+    ],
+    "invalidator": [
+      "go.mod"
+    ]
+  },
+  "blurb": ""
+}

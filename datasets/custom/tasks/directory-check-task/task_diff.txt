@@ -1,0 +1,15 @@
+diff --git a/tasks/directory-check-task/scripts/run_directory_check.sh b/tasks/directory-check-task/scripts/run_directory_check.sh
+index 6948baa..35e6bce 100755
+--- a/tasks/directory-check-task/scripts/run_directory_check.sh
++++ b/tasks/directory-check-task/scripts/run_directory_check.sh
+@@ -44,8 +44,8 @@ for exercise_path in "$ROOT_DIR"/*/; do
+ 
+   # Set documentation filenames based on language
+   if [[ "$LANGUAGE" == "swift" ]]; then
+-    DOCS_INSTRUCTIONS="Instructions.md"
+-    DOCS_INTRODUCTION="Introduction.md"
++    DOCS_INSTRUCTIONS="instructions.md"
++    DOCS_INTRODUCTION="introduction.md"
+   else
+     DOCS_INSTRUCTIONS="instructions.md"
+     DOCS_INTRODUCTION="introduction.md"

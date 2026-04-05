@@ -1,0 +1,62 @@
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from ParallelIntegratorTest
+[ RUN      ] ParallelIntegratorTest.SimpleFunction
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:21: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 0.0026876666666665883, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 0.3360209999999999,
+expected evaluates to 0.33333333333333331, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.SimpleFunction (0 ms)
+[ RUN      ] ParallelIntegratorTest.LinearFunction
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:32: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 0.0039999999999998925, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 0.50399999999999989,
+expected evaluates to 0.5, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.LinearFunction (0 ms)
+[ RUN      ] ParallelIntegratorTest.ConstantFunction
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:43: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 0.0080000000000000071, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 1.008,
+expected evaluates to 1, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.ConstantFunction (0 ms)
+[ RUN      ] ParallelIntegratorTest.CosineFunction
+[       OK ] ParallelIntegratorTest.CosineFunction (0 ms)
+[ RUN      ] ParallelIntegratorTest.ExponentialFunction
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:65: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 0.013764291927464534, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 1.7320461203865096,
+expected evaluates to 1.7182818284590451, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.ExponentialFunction (0 ms)
+[ RUN      ] ParallelIntegratorTest.InvalidInterval
+[       OK ] ParallelIntegratorTest.InvalidInterval (0 ms)
+[ RUN      ] ParallelIntegratorTest.LargeInterval
+/home/arun/Downloads/cpp001-20250812T073316Z-1-001/cpp001/cpp001_test.cpp:86: Failure
+The difference between integrator.integrate(func, a, b, 1000) and expected is 4000, which exceeds 1e-6, where
+integrator.integrate(func, a, b, 1000) evaluates to 504000,
+expected evaluates to 500000, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] ParallelIntegratorTest.LargeInterval (0 ms)
+[ RUN      ] ParallelIntegratorTest.ZeroFunction
+[       OK ] ParallelIntegratorTest.ZeroFunction (0 ms)
+[----------] 8 tests from ParallelIntegratorTest (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (5 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] ParallelIntegratorTest.SimpleFunction
+[  FAILED  ] ParallelIntegratorTest.LinearFunction
+[  FAILED  ] ParallelIntegratorTest.ConstantFunction
+[  FAILED  ] ParallelIntegratorTest.ExponentialFunction
+[  FAILED  ] ParallelIntegratorTest.LargeInterval
+
+ 5 FAILED TESTS

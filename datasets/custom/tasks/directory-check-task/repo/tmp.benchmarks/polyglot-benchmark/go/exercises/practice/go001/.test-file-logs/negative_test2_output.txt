@@ -1,0 +1,47 @@
+=== RUN   TestFindSubstringsWithNDistinctChars
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_1
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_2
+    main_test.go:43: findSubstringsWithNDistinctChars() = [nhd hdf dfs fsl], want [nhd hdf dfs fsl lsf]
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_3
+    main_test.go:43: findSubstringsWithNDistinctChars() = [abcdefghij bcdefghijk cdefghijkl defghijklm efghijklmn fghijklmno ghijklmnop hijklmnopq ijklmnopqr jklmnopqrs klmnopqrst lmnopqrstu mnopqrstuv nopqrstuvw opqrstuvwx pqrstuvwxy], want [abcdefghij bcdefghijk cdefghijkl defghijklm efghijklmn fghijklmno ghijklmnop hijklmnopq ijklmnopqr jklmnopqrs klmnopqrst lmnopqrstu mnopqrstuv nopqrstuvw opqrstuvwx pqrstuvwxy qrstuvwxyz]
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_4
+    main_test.go:43: findSubstringsWithNDistinctChars() = [abc bca], want [abc bca cab]
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_5
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_6
+    main_test.go:43: findSubstringsWithNDistinctChars() = [a b c d e f g h i j k l m n o p q r s t u v w x y], want [a b c d e f g h i j k l m n o p q r s t u v w x y z]
+=== RUN   TestFindSubstringsWithNDistinctChars/test_HC_7
+    main_test.go:43: findSubstringsWithNDistinctChars() = [], want [abcdefghijklmnopqrstuvwxyz]
+=== RUN   TestFindSubstringsWithNDistinctChars/test_NC_1
+=== RUN   TestFindSubstringsWithNDistinctChars/test_NC_2
+=== RUN   TestFindSubstringsWithNDistinctChars/test_NC_3
+=== RUN   TestFindSubstringsWithNDistinctChars/test_NC_4
+=== RUN   TestFindSubstringsWithNDistinctChars/test_NC_6
+=== RUN   TestFindSubstringsWithNDistinctChars/test_NC_7
+=== RUN   TestFindSubstringsWithNDistinctChars/test_EC_1
+    main_test.go:43: findSubstringsWithNDistinctChars() = [], want [a]
+=== RUN   TestFindSubstringsWithNDistinctChars/test_EC_2
+=== RUN   TestFindSubstringsWithNDistinctChars/test_EC_4
+=== RUN   TestFindSubstringsWithNDistinctChars/test_EC_3
+--- FAIL: TestFindSubstringsWithNDistinctChars (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_HC_1 (0.00s)
+    --- FAIL: TestFindSubstringsWithNDistinctChars/test_HC_2 (0.00s)
+    --- FAIL: TestFindSubstringsWithNDistinctChars/test_HC_3 (0.00s)
+    --- FAIL: TestFindSubstringsWithNDistinctChars/test_HC_4 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_HC_5 (0.00s)
+    --- FAIL: TestFindSubstringsWithNDistinctChars/test_HC_6 (0.00s)
+    --- FAIL: TestFindSubstringsWithNDistinctChars/test_HC_7 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_NC_1 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_NC_2 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_NC_3 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_NC_4 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_NC_6 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_NC_7 (0.00s)
+    --- FAIL: TestFindSubstringsWithNDistinctChars/test_EC_1 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_EC_2 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_EC_4 (0.00s)
+    --- PASS: TestFindSubstringsWithNDistinctChars/test_EC_3 (0.00s)
+=== RUN   TestPerformance
+--- PASS: TestPerformance (0.00s)
+FAIL
+FAIL	command-line-arguments	0.002s
+FAIL

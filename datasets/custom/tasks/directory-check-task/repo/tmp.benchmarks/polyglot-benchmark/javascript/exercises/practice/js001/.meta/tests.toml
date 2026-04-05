@@ -1,0 +1,35 @@
+[814abaf5-8532-4421-8bee-f8a927748c63]
+description = "test_HC should convert a simple flattened object into a nested object"
+
+[7cd1accc-3608-4846-b556-4609b23b85fc]
+description = "test_EC should return an empty object when given an empty object"
+
+[5cd6906a-78aa-42ef-a5d5-c7a20afb05db]
+description = "test_HC should correctly handle nested arrays"
+
+[cd64cf17-8309-4a97-98be-e8312541d0e6]
+description = "test_EC should correctly handle keys with special characters"
+
+[73866f18-62bd-4d37-ad59-d9089e21bfd3]
+description = "test_HC should correctly handle a mix of numeric and string keys"
+
+[fbea0a84-43e4-4041-995f-7318d1377150]
+description = "test_EC should throw an error when input is not an object"
+
+[7d05850c-b1d6-45e4-81b2-0885732c8ff8]
+description = "test_HC should correctly handle mixed-depth nesting"
+
+[4c55e515-a90e-4837-be16-3bdee90a5d48]
+description = "test_HC should correctly handle keys with undefined or null values"
+
+[2455771a-bcad-4849-959e-e16f5e6bace7]
+description = "test_HC should handle deeply nested structures"
+
+[75875986-5bf0-46d3-81dd-f8fd8737b4f6]
+description = "test_HC should handle objects with mixed types at different levels"
+
+[e48779c3-ba2f-4ffe-a36c-a8c6000b8daa]
+description = "test_HC should handle deeply nested keys with array indexes in different locations"
+
+[0a5a95e0-8c04-49a9-9d75-d62aa35619df]
+description = "test_EC should handle keys containing dots inside brackets"

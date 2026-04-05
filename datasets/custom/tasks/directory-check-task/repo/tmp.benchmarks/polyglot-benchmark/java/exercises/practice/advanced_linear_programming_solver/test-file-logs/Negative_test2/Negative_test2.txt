@@ -1,0 +1,59 @@
+> Task :test FAILED
+
+AdvancedLinearProgrammingSolverTest > testZeroCoefficients() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testZeroCoefficients(AdvancedLinearProgrammingSolverTest.java:57)
+
+AdvancedLinearProgrammingSolverTest > testMassiveStressCase() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 4001 out of bounds for length 4001
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.lambda$testMassiveStressCase$0(AdvancedLinearProgrammingSolverTest.java:130)
+
+AdvancedLinearProgrammingSolverTest > testFeasibleCaseWithZeroObjectiveCoefficients() PASSED
+
+AdvancedLinearProgrammingSolverTest > testBasicFeasibleCase() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testBasicFeasibleCase(AdvancedLinearProgrammingSolverTest.java:96)
+
+AdvancedLinearProgrammingSolverTest > testRedundantConstraints() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testRedundantConstraints(AdvancedLinearProgrammingSolverTest.java:105)
+
+AdvancedLinearProgrammingSolverTest > testNoVariables() PASSED
+
+AdvancedLinearProgrammingSolverTest > testNoConstraints() PASSED
+
+AdvancedLinearProgrammingSolverTest > testSingleConstraint() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testSingleConstraint(AdvancedLinearProgrammingSolverTest.java:37)
+
+AdvancedLinearProgrammingSolverTest > testUnboundedCase() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testUnboundedCase(AdvancedLinearProgrammingSolverTest.java:17)
+
+AdvancedLinearProgrammingSolverTest > testDegenerateCase() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testDegenerateCase(AdvancedLinearProgrammingSolverTest.java:27)
+
+AdvancedLinearProgrammingSolverTest > testSingleVariable() FAILED
+    java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+        at org.example.AdvancedLinearProgrammingSolver.simplex(AdvancedLinearProgrammingSolver.java:96)
+        at org.example.AdvancedLinearProgrammingSolver.twoPhaseSimplex(AdvancedLinearProgrammingSolver.java:60)
+        at org.example.AdvancedLinearProgrammingSolverTest.testSingleVariable(AdvancedLinearProgrammingSolverTest.java:47)
+
+11 tests completed, 8 failed
+
+FAILURE: Build failed with an exception.

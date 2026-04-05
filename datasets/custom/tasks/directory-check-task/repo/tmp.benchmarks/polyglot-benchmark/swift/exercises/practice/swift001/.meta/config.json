@@ -1,0 +1,17 @@
+{
+  "Codebench": {
+    "L1Taxonomy": "Algorithmic / CS",
+    "L2Taxonomy": "Algorithm"
+  },
+  "files": {
+    "solution": [
+      "Sources/swift001/swift001.swift"
+    ],
+    "test": [
+      "Tests/Testswift001/Testswift001.swift"
+    ],
+    "example": [
+      ".meta/Sources/swift001/example.swift"
+    ]
+  }
+}

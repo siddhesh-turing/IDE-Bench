@@ -1,0 +1,18 @@
+{
+  "Codebench": {
+    "L1Taxonomy": "Backend Development",
+    "L2Taxonomy": "Object Manipulation"
+  },
+  "files": {
+    "solution": [
+      "js001.js"
+    ],
+    "test": [
+      "js001.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.js"
+    ]
+  },
+  "blurb": ""
+}

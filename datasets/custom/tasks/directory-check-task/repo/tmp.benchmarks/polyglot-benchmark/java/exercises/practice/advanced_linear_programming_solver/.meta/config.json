@@ -1,0 +1,18 @@
+{
+  "advanced_linear_programming_solver": {
+    "L1Taxonomy": "Algorithmic / CS",
+    "L2Taxonomy": "Simplex Method"
+  },
+  "files": {
+    "solution": [
+      "src/main/java/AdvancedLinearProgrammingSolver.java"
+    ],
+    "test": [
+      "src/test/java/AdvancedLinearProgrammingSolverTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/AdvancedLinearProgrammingSolver.java"
+    ]
+  },
+  "blurb": ""
+}

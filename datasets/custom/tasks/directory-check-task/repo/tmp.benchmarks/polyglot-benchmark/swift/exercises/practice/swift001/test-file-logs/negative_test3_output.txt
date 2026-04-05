@@ -1,0 +1,34 @@
+Test Suite 'MaximumArrayXOR_TestCases' started at 2025-09-05 00:47:25.739.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_AllZeros]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_AllZeros]' passed (0.001 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_EmptyArray]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_EmptyArray]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_KthSmallestOutOfBounds]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_KthSmallestOutOfBounds]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_KthSmallestWithNegativeNumbers]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_KthSmallestWithNegativeNumbers]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_LargeNumbers]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_LargeNumbers]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_LongestZeroSumSubarray]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_LongestZeroSumSubarray]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_NegativeAndPositiveMix]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_NegativeAndPositiveMix]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_Performance]' started.
+2.944374918937683
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_EC_Performance]' passed (3.704 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_AllSameElements]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_AllSameElements]' passed (0.001 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_KthSmallestBasicCase]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_KthSmallestBasicCase]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_MajorityElementExists]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_MajorityElementExists]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_MaxXOR]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_MaxXOR]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_NoMajorityElement]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_NoMajorityElement]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_ProductExceptSelf]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_ProductExceptSelf]' passed (0.000 seconds).
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_SingleElement]' started.
+Test Case '-[AiderBenchmarkingReviewTests.MaximumArrayXOR_TestCases test_HC_SingleElement]' passed (0.000 seconds).
+Test Suite 'MaximumArrayXOR_TestCases' passed at 2025-09-05 00:47:29.465.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 3.710 (3.726) seconds

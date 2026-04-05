@@ -1,0 +1,26 @@
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from ParallelIntegratorTest
+[ RUN      ] ParallelIntegratorTest.SimpleFunction
+[       OK ] ParallelIntegratorTest.SimpleFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.LinearFunction
+[       OK ] ParallelIntegratorTest.LinearFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.ConstantFunction
+[       OK ] ParallelIntegratorTest.ConstantFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.CosineFunction
+[       OK ] ParallelIntegratorTest.CosineFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.ExponentialFunction
+[       OK ] ParallelIntegratorTest.ExponentialFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.InvalidInterval
+[       OK ] ParallelIntegratorTest.InvalidInterval (0 ms)
+[ RUN      ] ParallelIntegratorTest.LargeInterval
+[       OK ] ParallelIntegratorTest.LargeInterval (1 ms)
+[ RUN      ] ParallelIntegratorTest.ZeroFunction
+[       OK ] ParallelIntegratorTest.ZeroFunction (1 ms)
+[ RUN      ] ParallelIntegratorTest.PerformanceTest
+[       OK ] ParallelIntegratorTest.PerformanceTest (64 ms)
+[----------] 9 tests from ParallelIntegratorTest (76 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (76 ms total)
+[  PASSED  ] 9 tests.

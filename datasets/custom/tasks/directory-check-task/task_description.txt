@@ -1,0 +1,31 @@
+task_description: |
+
+  Task: directory-check-task
+
+  Instructions:
+
+  I am working on validating benchmark datasets before delivery, and I have a shell script (`scripts/run_directory_check.sh`) that is supposed to verify whether the sample structure and required files are correctly in place.
+
+  The datasets are organized by language under:
+  tmp.benchmarks/polyglot-benchmark/{task_language}
+
+  Each exercise is expected to follow a structure like:
+  {task_language}/exercises/practice/{task_name}
+
+  The script is intended to check for required files, naming conventions, and general structure consistency. 
+  However, it is currently not behaving reliably, it misses some edge cases, breaks in certain directory scenarios, and does not handle missing or empty files gracefully.
+
+  I need help fixing this script so that it:
+  - correctly validates the presence of all required files and directories
+  - handles missing or malformed structures without crashing
+  - works reliably when run inside a containerized environment
+  - avoids brittle assumptions (like hardcoded paths or fragile checks)
+
+  Please update the script accordingly so that it performs robust validation across all exercises.
+
+  Do not modify the test suite.
+
+difficulty: easy
+category: Script Fix
+tags: [bash, shell, script]
+parser_name: pytest

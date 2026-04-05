@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "siddhesh"
+  ],
+  "files": {
+    "solution": [
+      "cpp001.cpp"
+    ],
+    "test": [
+      "cpp001_test.cpp"
+    ],
+    "example": [
+      ".meta/example.cpp"
+    ]
+  },
+  "blurb": "",
+  "source": "",
+  "source_url": ""
+}
