@@ -1,27 +1,34 @@
 task_description: |
 
-  Task: directory-check-task
+  Task: <directory-check-task>, Fix multi-language benchmark directory validation script
 
   Instructions:
 
-  I am working on validating benchmark datasets before delivery, and I have a shell script (`scripts/run_directory_check.sh`) that is supposed to verify whether the sample structure and required files are correctly in place.
-
-  The datasets are organized by language under:
-  tmp.benchmarks/polyglot-benchmark/{task_language}
-
-  Each exercise is expected to follow a structure like:
-  {task_language}/exercises/practice/{task_name}
-
-  The script is intended to check for required files, naming conventions, and general structure consistency. 
-  However, it is currently not behaving reliably, it misses some edge cases, breaks in certain directory scenarios, and does not handle missing or empty files gracefully.
-
-  I need help fixing this script so that it:
-  - correctly validates the presence of all required files and directories
-  - handles missing or malformed structures without crashing
-  - works reliably when run inside a containerized environment
-  - avoids brittle assumptions (like hardcoded paths or fragile checks)
-
-  Please update the script accordingly so that it performs robust validation across all exercises.
+  I am working on a shell script at `scripts/run_directory_check.sh` that is used to validate benchmark samples before delivery. These samples live under `tmp.benchmarks/polyglot-benchmark/{task_language}/exercises/practice/{task_name}` and the script is expected to verify that the required files and folders are present, correctly named, and non-empty.
+  
+  The current implementation assumes a mostly default benchmark structure, which is closest to the C++ layout. That default layout is also followed closely by Python, Java, and JavaScript samples. However, the script is currently not handling some language-specific structural differences correctly, especially for Swift and Go.
+  
+  For the default structure, the script should expect documentation files under `.docs/`, metadata under `.meta/`, the main stub file at the exercise root, the main test file at the exercise root, and negative-test artifacts under `test-file-logs/`.
+  
+  Swift differs from the default structure in several important ways:
+  - the documentation files under `.docs/` use capitalized names: `Instructions.md` and `Introduction.md`
+  - the package contains `Package.swift`
+  - the ideal solution example is located at `.meta/Sources/{task_name}/example.swift`
+  - the stub implementation is located at `Sources/{task_name}/{task_name}.swift`
+  - the test suite is located at `Tests/Test{task_name}/Test{task_name}.swift`
+  
+  Go is mostly similar to the default structure, but also has a few important differences:
+  - it includes `cases_test.go`
+  - it includes `go.mod`
+  - the directory holding the copied test file and negative-test artifacts is named `.test-file-logs` instead of `test-file-logs`
+  
+  Please update the script so that it validates the default benchmark layout correctly, while also handling these Swift- and Go-specific differences without breaking the other languages.
+  
+  The script should:
+  - correctly validate required files and directories across supported languages
+  - detect missing files, missing directories, and empty files
+  - fail cleanly when validation does not pass
+  - work reliably in the provided containerized environment
 
   Do not modify the test suite.
 
