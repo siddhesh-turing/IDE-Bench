@@ -1,0 +1,29 @@
+[79412779-1c37-4b88-a23c-9f4164750a95]
+description = "output type matches function signature"
+
+[35450ef6-473b-4a89-ae9c-d6a62638b030]
+description = "large input does not fail"
+
+[511b1cb5-f226-463b-9aa6-199a1356f3e0]
+description = "correct number of rows in output"
+
+[5a5acdcd-889b-4f9b-b91c-c8fd586754d2]
+description = "dual coefficients correct"
+
+[b5a2a86a-56fd-4eec-bdef-2856fdc9676b]
+description = "three variables two constraints"
+
+[1ad790d5-df80-468b-8204-6c0660102697]
+description = "two variables three constraints"
+
+[4fdf2efc-9331-4e86-ab69-7403268454fb]
+description = "three variables three constraints"
+
+[51f511ce-582a-4341-ba32-9452fdce3bb7]
+description = "two variables two constraints"
+
+[a18e70f2-ea54-4f21-a89d-53494cf1f733]
+description = "two variables different coefficients"
+
+[e8c429ed-d2be-4353-890a-7d45c39a0cde]
+description = "two variables with large constraints"

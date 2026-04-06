@@ -1,0 +1,14 @@
+.....F......
+======================================================================
+FAIL: test_HC_test_output_type_matches_function_signature (test-file-logs.test2.TestFindPrimalFeasibleSolutions.test_HC_test_output_type_matches_function_signature)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nitya/Downloads/python_26_aug/python090/test-file-logs/test2.py", line 75, in test_HC_test_output_type_matches_function_signature
+    self.assertTrue(all(isinstance(sol, list) for sol in result))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.068s
+
+FAILED (failures=1)

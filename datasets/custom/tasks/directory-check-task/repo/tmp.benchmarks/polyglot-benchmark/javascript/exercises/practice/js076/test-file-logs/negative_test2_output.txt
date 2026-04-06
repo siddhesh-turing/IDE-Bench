@@ -1,0 +1,377 @@
+ FAIL  ./cases.test.js
+  TestDualityConstruction
+    √ output type matches function signature (3 ms)                  
+    √ large input does not fail (3 ms)                               
+    √ correct number of rows in output                               
+    × dual coefficients correct (5 ms)                               
+    × three variables two constraints (1 ms)                         
+    × two variables three constraints (2 ms)                         
+    × three variables three constraints (2 ms)                       
+    × two variables two constraints (1 ms)                           
+    × two variables different coefficients (1 ms)                    
+    × two variables with large constraints (1 ms)                    
+    × single variable multiple constraints (1 ms)                    
+    × multiple variables single constraint                           
+    × matrix with negative coefficients (1 ms)                       
+    × matrix with zero coefficients (1 ms)                           
+    × single variable single constraint (1 ms)                       
+    √ performance test: should complete large square matrix within 120 seconds (649 ms)                                                   
+    √ performance test: should complete large rectangular matrix within 120 seconds (532 ms)                                              
+
+  ● TestDualityConstruction › dual coefficients correct              
+                                                                     
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 0
+
+      Array [
+        Array [
+          1,
+    -     1,
+        ],
+        Array [
+          3,
+    -     5,
+        ],
+        Array [
+          2,
+    -     1,
+        ],
+      ]
+
+      111 |     const expectedDualRhs = [8, 10, 7];
+      112 |     expect(result[0]).toEqual(expectedDualObj);
+    > 113 |     expect(result[1]).toEqual(expectedDualConstr);       
+          |                       ^
+      114 |     expect(result[2]).toEqual(expectedDualRhs);
+      115 |   });
+      116 |
+
+      at Object.toEqual (cases.test.js:113:23)
+
+  ● TestDualityConstruction › three variables two constraints        
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 0
+
+      Array [
+        Array [
+          1,
+    -     1,
+        ],
+        Array [
+          3,
+    -     5,
+        ],
+        Array [
+          2,
+    -     1,
+        ],
+      ]
+
+      137 |     );
+      138 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 139 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      140 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      141 |   });
+      142 |
+
+      at Object.toEqual (cases.test.js:139:23)
+
+  ● TestDualityConstruction › two variables three constraints        
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+        Array [
+          1,
+          0,
+    -     3,
+        ],
+        Array [
+          0,
+    -     2,
+          2,
+        ],
+      ]
+
+      163 |     );
+      164 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 165 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      166 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      167 |   });
+      168 |
+
+      at Object.toEqual (cases.test.js:165:23)
+
+  ● TestDualityConstruction › three variables three constraints      
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 0
+
+      Array [
+        Array [
+          2,
+          1,
+    -     2,
+        ],
+        Array [
+          1,
+          3,
+    -     1,
+        ],
+        Array [
+          1,
+    -     2,
+          2,
+        ],
+      ]
+
+      190 |     );
+      191 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 192 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      193 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      194 |   });
+      195 |
+
+      at Object.toEqual (cases.test.js:192:23)
+
+  ● TestDualityConstruction › two variables two constraints
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+        Array [
+          2,
+    -     3,
+        ],
+        Array [
+          4,
+    -     2,
+        ],
+      ]
+
+      215 |     );
+      216 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 217 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      218 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      219 |   });
+      220 |
+
+      at Object.toEqual (cases.test.js:217:23)
+
+  ● TestDualityConstruction › two variables different coefficients   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+        Array [
+          2,
+    -     3,
+        ],
+        Array [
+          4,
+    -     2,
+        ],
+      ]
+
+      240 |     );
+      241 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 242 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      243 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      244 |   });
+      245 |
+
+      at Object.toEqual (cases.test.js:242:23)
+
+  ● TestDualityConstruction › two variables with large constraints   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+        Array [
+          1,
+          0,
+    -     1,
+        ],
+        Array [
+          0,
+    -     1,
+          1,
+        ],
+      ]
+
+      266 |     );
+      267 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 268 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      269 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      270 |   });
+      271 |
+
+      at Object.toEqual (cases.test.js:268:23)
+
+  ● TestDualityConstruction › single variable multiple constraints   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 0
+
+      Array [
+        Array [
+          4,
+          2,
+    -     1,
+        ],
+      ]
+
+      282 |     );
+      283 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 284 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      285 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      286 |   });
+      287 |
+
+      at Object.toEqual (cases.test.js:284:23)
+
+  ● TestDualityConstruction › multiple variables single constraint   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 9
+    + Received  + 3
+
+      Array [
+    -   Array [
+    -     4,
+    -   ],
+    -   Array [
+    -     5,
+    -   ],
+    -   Array [
+    -     6,
+    -   ],
+    +   Array [],
+    +   Array [],
+    +   Array [],
+      ]
+
+      297 |     );
+      298 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 299 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      300 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      301 |   });
+      302 |
+
+      at Object.toEqual (cases.test.js:299:23)
+
+  ● TestDualityConstruction › matrix with negative coefficients      
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+        Array [
+          1,
+    -     -2,
+        ],
+        Array [
+          -1,
+    -     2,
+        ],
+      ]
+
+      322 |     );
+      323 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 324 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      325 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      326 |   });
+      327 |
+
+      at Object.toEqual (cases.test.js:324:23)
+
+  ● TestDualityConstruction › matrix with zero coefficients
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 0
+
+      Array [
+        Array [
+          0,
+    -     3,
+        ],
+        Array [
+          1,
+    -     0,
+        ],
+      ]
+
+      347 |     );
+      348 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 349 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      350 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      351 |   });
+      352 |
+
+      at Object.toEqual (cases.test.js:349:23)
+
+  ● TestDualityConstruction › single variable single constraint      
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 1
+
+      Array [
+    -   Array [
+    -     2,
+    -   ],
+    +   Array [],
+      ]
+
+      362 |     );
+      363 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 364 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      365 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      366 |   });
+      367 |
+
+      at Object.toEqual (cases.test.js:364:23)
+
+Test Suites: 1 failed, 1 total                                       
+Tests:       12 failed, 5 passed, 17 total                           
+Snapshots:   0 total
+Time:        1.946 s, estimated 2 s
+Ran all test suites matching cases.test.js.

@@ -1,0 +1,18 @@
+{
+  "smart_agriculture_system": {
+    "L1Taxonomy": "Algorithmic / CS",
+    "L2Taxonomy": "Tree Traversals Algorithms"
+  },
+  "files": {
+    "solution": [
+      "src/main/java/SmartAgricultureSystem.java"
+    ],
+    "test": [
+      "src/test/java/SmartAgricultureSystemTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SmartAgricultureSystem.java"
+    ]
+  },
+  "blurb": ""
+}

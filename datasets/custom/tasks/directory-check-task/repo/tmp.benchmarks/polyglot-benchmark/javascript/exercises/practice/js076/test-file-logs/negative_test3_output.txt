@@ -1,0 +1,24 @@
+ PASS  ./cases.test.js
+  TestDualityConstruction                                            
+    √ output type matches function signature (2 ms)                  
+    √ large input does not fail (1 ms)                               
+    √ correct number of rows in output                               
+    √ dual coefficients correct (1 ms)                               
+    √ three variables two constraints                                
+    √ two variables three constraints                                
+    √ three variables three constraints (1 ms)                       
+    √ two variables two constraints                                  
+    √ two variables different coefficients                           
+    √ two variables with large constraints                           
+    √ single variable multiple constraints                           
+    √ multiple variables single constraint (1 ms)                    
+    √ matrix with negative coefficients (1 ms)                       
+    √ matrix with zero coefficients (1 ms)                           
+    √ single variable single constraint                              
+    √ performance test: should complete large square matrix within 120 seconds (438 ms)                                                   
+    √ performance test: should complete large rectangular matrix within 120 seconds (594 ms)                                              
+
+Test Suites: 1 passed, 1 total                                       
+Tests:       17 passed, 17 total                                     
+Snapshots:   0 total
+Time:        1.486 s, estimated 3 s

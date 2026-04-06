@@ -1,0 +1,18 @@
+{
+  "Codebench": {
+    "L1Taxonomy": "Algorithmic / CS",
+    "L2Taxonomy": "Linear Programming"
+  },
+  "files": {
+    "solution": [
+      "js076.js"
+    ],
+    "test": [
+      "js076.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.js"
+    ]
+  },
+  "blurb": ""
+}

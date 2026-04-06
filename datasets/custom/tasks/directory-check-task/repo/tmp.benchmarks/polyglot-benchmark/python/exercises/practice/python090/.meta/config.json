@@ -1,0 +1,18 @@
+{
+  "Codebench": {
+    "L1Taxonomy": "Algorithmic / CS",
+    "L2Taxonomy": "Linear Programming"
+  },
+  "files": {
+    "solution": [
+      "solution.py"
+    ],
+    "test": [
+      "python090_test.py"
+    ],
+    "example": [
+      ".meta/example.py"
+    ]
+  },
+  "blurb": ""
+}

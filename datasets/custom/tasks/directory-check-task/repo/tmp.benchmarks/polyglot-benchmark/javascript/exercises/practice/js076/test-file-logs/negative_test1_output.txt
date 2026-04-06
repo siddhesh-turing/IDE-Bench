@@ -1,0 +1,364 @@
+ FAIL  ./cases.test.js
+  TestDualityConstruction
+    × output type matches function signature (2 ms)                  
+    × large input does not fail (1 ms)                               
+    √ correct number of rows in output (1 ms)                        
+    × dual coefficients correct                                      
+    × three variables two constraints (1 ms)                         
+    × two variables three constraints (19 ms)                        
+    × three variables three constraints (4 ms)                       
+    × two variables two constraints (3 ms)                           
+    × two variables different coefficients (2 ms)                    
+    × two variables with large constraints (2 ms)                    
+    × single variable multiple constraints (2 ms)                    
+    × multiple variables single constraint (1 ms)                    
+    × matrix with negative coefficients (2 ms)                       
+    × matrix with zero coefficients (2 ms)                           
+    √ single variable single constraint (1 ms)                       
+    √ performance test: should complete large square matrix within 120 seconds (578 ms)                                                   
+    × performance test: should complete large rectangular matrix within 120 seconds (616 ms)                                              
+
+  ● TestDualityConstruction › output type matches function signature 
+                                                                     
+    TypeError: Cannot read properties of undefined (reading '0')     
+
+      23 |     let row = [];
+      24 |     for (let i = 0; i < m; i++) {
+    > 25 |       row.push(constraintsCoeff[j][i]); // BUG: Swapped i and j here
+         |                                   ^
+      26 |     }
+      27 |     dualConstraintsCoeff.push(row);
+      28 |   }
+
+      at dualityConstruction (cases.test.js:25:35)
+      at Object.dualityConstruction (cases.test.js:48:20)
+
+  ● TestDualityConstruction › large input does not fail
+
+    TypeError: Cannot read properties of undefined (reading '0')     
+
+      23 |     let row = [];
+      24 |     for (let i = 0; i < m; i++) {
+    > 25 |       row.push(constraintsCoeff[j][i]); // BUG: Swapped i and j here
+         |                                   ^
+      26 |     }
+      27 |     dualConstraintsCoeff.push(row);
+      28 |   }
+
+      at dualityConstruction (cases.test.js:25:35)
+      at Object.dualityConstruction (cases.test.js:67:20)
+
+  ● TestDualityConstruction › dual coefficients correct
+
+    TypeError: Cannot read properties of undefined (reading '0')     
+
+      23 |     let row = [];
+      24 |     for (let i = 0; i < m; i++) {
+    > 25 |       row.push(constraintsCoeff[j][i]); // BUG: Swapped i and j here
+         |                                   ^
+      26 |     }
+      27 |     dualConstraintsCoeff.push(row);
+      28 |   }
+
+      at dualityConstruction (cases.test.js:25:35)
+      at Object.dualityConstruction (cases.test.js:99:20)
+
+  ● TestDualityConstruction › three variables two constraints        
+
+    TypeError: Cannot read properties of undefined (reading '0')     
+
+      23 |     let row = [];
+      24 |     for (let i = 0; i < m; i++) {
+    > 25 |       row.push(constraintsCoeff[j][i]); // BUG: Swapped i and j here
+         |                                   ^
+      26 |     }
+      27 |     dualConstraintsCoeff.push(row);
+      28 |   }
+
+      at dualityConstruction (cases.test.js:25:35)
+      at Object.dualityConstruction (cases.test.js:132:20)
+
+  ● TestDualityConstruction › two variables three constraints        
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          1,
+          0,
+    -     3,
+    +     undefined,
+        ],
+        Array [
+          0,
+    -     2,
+          2,
+    +     undefined,
+        ],
+      ]
+
+      162 |     );
+      163 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 164 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      165 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      166 |   });
+      167 |
+
+      at Object.toEqual (cases.test.js:164:23)
+
+  ● TestDualityConstruction › three variables three constraints      
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Array [
+        Array [
+          2,
+          1,
+    -     2,
+    +     1,
+        ],
+        Array [
+          1,
+          3,
+    -     1,
+    +     2,
+        ],
+        Array [
+    -     1,
+          2,
+    +     1,
+          2,
+        ],
+      ]
+
+      189 |     );
+      190 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 191 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      192 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      193 |   });
+      194 |
+
+      at Object.toEqual (cases.test.js:191:23)
+
+  ● TestDualityConstruction › two variables two constraints
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          2,
+    -     3,
+    +     4,
+        ],
+        Array [
+    -     4,
+    +     3,
+          2,
+        ],
+      ]
+
+      214 |     );
+      215 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 216 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      217 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      218 |   });
+      219 |
+
+      at Object.toEqual (cases.test.js:216:23)
+
+  ● TestDualityConstruction › two variables different coefficients   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          2,
+    -     3,
+    +     4,
+        ],
+        Array [
+    -     4,
+    +     3,
+          2,
+        ],
+      ]
+
+      239 |     );
+      240 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 241 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      242 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      243 |   });
+      244 |
+
+      at Object.toEqual (cases.test.js:241:23)
+
+  ● TestDualityConstruction › two variables with large constraints   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          1,
+          0,
+    -     1,
+    +     undefined,
+        ],
+        Array [
+          0,
+    -     1,
+          1,
+    +     undefined,
+        ],
+      ]
+
+      265 |     );
+      266 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 267 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      268 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      269 |   });
+      270 |
+
+      at Object.toEqual (cases.test.js:267:23)
+
+  ● TestDualityConstruction › single variable multiple constraints   
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          4,
+    -     2,
+    -     1,
+    +     undefined,
+    +     undefined,
+        ],
+      ]
+
+      281 |     );
+      282 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 283 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      284 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      285 |   });
+      286 |
+
+      at Object.toEqual (cases.test.js:283:23)
+
+  ● TestDualityConstruction › multiple variables single constraint   
+
+    TypeError: Cannot read properties of undefined (reading '0')     
+
+      23 |     let row = [];
+      24 |     for (let i = 0; i < m; i++) {
+    > 25 |       row.push(constraintsCoeff[j][i]); // BUG: Swapped i and j here
+         |                                   ^
+      26 |     }
+      27 |     dualConstraintsCoeff.push(row);
+      28 |   }
+
+      at dualityConstruction (cases.test.js:25:35)
+      at Object.dualityConstruction (cases.test.js:292:20)
+
+  ● TestDualityConstruction › matrix with negative coefficients      
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          1,
+    -     -2,
+    +     -1,
+        ],
+        Array [
+    -     -1,
+    +     -2,
+          2,
+        ],
+      ]
+
+      321 |     );
+      322 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 323 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      324 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      325 |   });
+      326 |
+
+      at Object.toEqual (cases.test.js:323:23)
+
+  ● TestDualityConstruction › matrix with zero coefficients
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Array [
+          0,
+    -     3,
+    +     1,
+        ],
+        Array [
+    -     1,
+    +     3,
+          0,
+        ],
+      ]
+
+      346 |     );
+      347 |     expect(result[0]).toEqual(expectedOutput[0]);        
+    > 348 |     expect(result[1]).toEqual(expectedOutput[1]);        
+          |                       ^
+      349 |     expect(result[2]).toEqual(expectedOutput[2]);        
+      350 |   });
+      351 |
+
+      at Object.toEqual (cases.test.js:348:23)
+
+  ● TestDualityConstruction › performance test: should complete large rectangular matrix within 120 seconds
+
+    TypeError: Cannot read properties of undefined (reading '0')     
+
+      23 |     let row = [];
+      24 |     for (let i = 0; i < m; i++) {
+    > 25 |       row.push(constraintsCoeff[j][i]); // BUG: Swapped i and j here
+         |                                   ^
+      26 |     }
+      27 |     dualConstraintsCoeff.push(row);
+      28 |   }
+
+      at dualityConstruction (cases.test.js:25:35)
+      at Object.dualityConstruction (cases.test.js:419:20)
+
+Test Suites: 1 failed, 1 total                                       
+Tests:       14 failed, 3 passed, 17 total                           
+Snapshots:   0 total
+Time:        2.083 s
+Ran all test suites matching cases.test.js.

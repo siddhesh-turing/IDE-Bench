@@ -1,0 +1,43 @@
+E.......FF.F
+======================================================================
+ERROR: test_EC_test_edge_case_with_minimum_constraints (test-file-logs.test1.TestFindPrimalFeasibleSolutions.test_EC_test_edge_case_with_minimum_constraints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nitya/Downloads/python_26_aug/python090/test-file-logs/test1.py", line 92, in test_EC_test_edge_case_with_minimum_constraints
+    result = find_primal_feasible_solutions(objective_coeff, constraints_coeff, constraints_rhs)
+  File "/Users/nitya/Downloads/python_26_aug/python090/test-file-logs/test1.py", line 44, in find_primal_feasible_solutions
+    return (vertices[0], vertices[1])
+                         ~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_HC_test_two_variables_different_coefficients (test-file-logs.test1.TestFindPrimalFeasibleSolutions.test_HC_test_two_variables_different_coefficients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nitya/Downloads/python_26_aug/python090/test-file-logs/test1.py", line 146, in test_HC_test_two_variables_different_coefficients
+    self.assertTrue(self.is_primal_feasible(result[1], constraints_coeff, constraints_rhs))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_HC_test_two_variables_shipping_cost (test-file-logs.test1.TestFindPrimalFeasibleSolutions.test_HC_test_two_variables_shipping_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nitya/Downloads/python_26_aug/python090/test-file-logs/test1.py", line 165, in test_HC_test_two_variables_shipping_cost
+    self.assertTrue(self.is_primal_feasible(result[1], constraints_coeff, constraints_rhs))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_HC_test_two_variables_two_constraints (test-file-logs.test1.TestFindPrimalFeasibleSolutions.test_HC_test_two_variables_two_constraints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/nitya/Downloads/python_26_aug/python090/test-file-logs/test1.py", line 138, in test_HC_test_two_variables_two_constraints
+    self.assertTrue(self.is_primal_feasible(result[1], constraints_coeff, constraints_rhs))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.071s
+
+FAILED (failures=3, errors=1)

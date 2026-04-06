@@ -1,0 +1,219 @@
+[[tests]]
+code = """
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.*;
+
+class SmartAgricultureSystemTest {
+
+    @Test
+    void testAnalyzeFarmland_SingleZone() {
+        int N = 1;
+        String[][] farmlandTree = {{"Zone A", "ROOT", "60", "40"}};
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals(List.of("Zone A"), result.get("Preorder Traversal"));
+        assertEquals(List.of("Zone A"), result.get("Inorder Traversal"));
+        assertEquals(List.of("Zone A"), result.get("Postorder Traversal"));
+        assertEquals("Zone A", result.get("Driest Zone"));
+        assertEquals("Zone A", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_TwoLevels() {
+        int N = 3;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "30", "50"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals(List.of("Zone A", "Zone B", "Zone C"), result.get("Preorder Traversal"));
+        assertEquals(List.of("Zone B", "Zone A", "Zone C"), result.get("Inorder Traversal"));
+        assertEquals(List.of("Zone B", "Zone C", "Zone A"), result.get("Postorder Traversal"));
+        assertEquals("Zone C", result.get("Driest Zone"));
+        assertEquals("Zone C", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_ThreeLevels() {
+        int N = 5;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "30", "50"},
+                {"Zone D", "Zone C", "20", "55"},
+                {"Zone E", "Zone C", "40", "35"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals(List.of("Zone A", "Zone B", "Zone C", "Zone D", "Zone E"), result.get("Preorder Traversal"));
+        assertEquals(List.of("Zone B", "Zone A", "Zone D", "Zone C", "Zone E"), result.get("Inorder Traversal"));
+        assertEquals(List.of("Zone B", "Zone D", "Zone E", "Zone C", "Zone A"), result.get("Postorder Traversal"));
+        assertEquals("Zone D", result.get("Driest Zone"));
+        assertEquals("Zone D", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_AllEqualMoisture() {
+        int N = 3;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "50", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "50", "50"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone A", result.get("Driest Zone")); // First zone in traversal
+    }
+
+    @Test
+    void testAnalyzeFarmland_AllEqualNutrient() {
+        int N = 3;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "50"},
+                {"Zone B", "Zone A", "50", "50"},
+                {"Zone C", "Zone A", "30", "50"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone A", result.get("Most Fertile Zone")); // First zone in traversal
+    }
+
+    @Test
+    void testAnalyzeFarmland_InvalidInput() {
+        int N = 2;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "InvalidParent", "50", "45"}
+        };
+
+        assertThrows(NullPointerException.class, () -> SmartAgricultureSystem.analyzeFarmland(N, farmlandTree));
+    }
+
+    @Test
+    void testAnalyzeFarmland_LargeTree() {
+        int N = 7;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "30", "50"},
+                {"Zone D", "Zone C", "20", "55"},
+                {"Zone E", "Zone C", "40", "35"},
+                {"Zone F", "Zone B", "10", "60"},
+                {"Zone G", "Zone B", "70", "30"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals(List.of("Zone A", "Zone B", "Zone F", "Zone G", "Zone C", "Zone D", "Zone E"), result.get("Preorder Traversal"));
+        assertEquals(List.of("Zone F", "Zone B", "Zone G", "Zone A", "Zone D", "Zone C", "Zone E"), result.get("Inorder Traversal"));
+        assertEquals(List.of("Zone F", "Zone G", "Zone B", "Zone D", "Zone E", "Zone C", "Zone A"), result.get("Postorder Traversal"));
+        assertEquals("Zone F", result.get("Driest Zone"));
+        assertEquals("Zone F", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_DriestZoneAtLeaf() {
+        int N = 4;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "30", "50"},
+                {"Zone D", "Zone C", "10", "55"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone D", result.get("Driest Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_MostFertileZoneAtLeaf() {
+        int N = 4;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "30", "50"},
+                {"Zone D", "Zone C", "20", "60"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone D", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_DriestAndFertileSameZone() {
+        int N = 3;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "10", "60"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone C", result.get("Driest Zone"));
+        assertEquals("Zone C", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_DriestAndFertileDifferentZones() {
+        int N = 4;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "10", "50"},
+                {"Zone D", "Zone C", "20", "60"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone C", result.get("Driest Zone"));
+        assertEquals("Zone D", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_ComplexTree() {
+        int N = 6;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "60", "40"},
+                {"Zone B", "Zone A", "50", "45"},
+                {"Zone C", "Zone A", "30", "50"},
+                {"Zone D", "Zone C", "20", "55"},
+                {"Zone E", "Zone C", "40", "35"},
+                {"Zone F", "Zone B", "10", "60"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals(List.of("Zone A", "Zone B", "Zone F", "Zone C", "Zone D", "Zone E"), result.get("Preorder Traversal"));
+        assertEquals(List.of("Zone F", "Zone B", "Zone A", "Zone D", "Zone C", "Zone E"), result.get("Inorder Traversal"));
+        assertEquals(List.of("Zone F", "Zone B", "Zone D", "Zone E", "Zone C", "Zone A"), result.get("Postorder Traversal"));
+        assertEquals("Zone F", result.get("Driest Zone"));
+        assertEquals("Zone F", result.get("Most Fertile Zone"));
+    }
+
+    @Test
+    void testAnalyzeFarmland_AllZonesEqual() {
+        int N = 3;
+        String[][] farmlandTree = {
+                {"Zone A", "ROOT", "50", "50"},
+                {"Zone B", "Zone A", "50", "50"},
+                {"Zone C", "Zone A", "50", "50"}
+        };
+
+        Map<String, Object> result = SmartAgricultureSystem.analyzeFarmland(N, farmlandTree);
+
+        assertEquals("Zone A", result.get("Driest Zone"));
+        assertEquals("Zone A", result.get("Most Fertile Zone"));
+    }
+}
+"""
